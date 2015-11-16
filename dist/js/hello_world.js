@@ -1,7 +1,12 @@
 
 function tell(){
 //alert('test');
-document.getElementById("preorlogin").innerHTML = "Premium";
+    if(document.getElementById("preorlogin").innerHTML == "Logga in"){
+        document.getElementById("preorlogin").innerHTML = "Premium";
+    }else{
+document.getElementById("preorlogin").innerHTML = "Logga in";
+    }
+    
 }
 
 
