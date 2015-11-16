@@ -67,6 +67,14 @@ p {
     width: 100%;
     z-index: 100;
     
+    #preorlogin {
+    display: flex;
+    justify-content: flex-end;
+    color:$light_green_color;
+    padding-right: 2em;
+    background-color: #000000;
+}
+    
     label {
         display: -webkit-box;
         display: -webkit-flex;
