@@ -68,6 +68,14 @@ p {
     #preorlogin {
         display: none;
     }
+
+    #preorlogin-mobile {
+        display: flex;
+        margin-top: 5em;
+        text-align: center;
+        justify-content: center;
+        color: $light_green_color;
+    }
     label {
         display: -webkit-box;
         display: -webkit-flex;
@@ -231,11 +239,39 @@ p {
     }
 }
 
+/* SLIDE MENU */
+.off-canvas-menu {
+    top: 0;
+    left: -80%;
+    height: 100%;
+    background-color: $dark_grey_color;
+    z-index: 8;
+    width: 80%;
+    position: fixed;
+    transition: left 0.6s;
+
+    ul{
+        display: flex;
+        width: 80%;
+        left: -80%;
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        flex-direction: column;
+    }
+}
+#nav {
+    input.trigger:checked ~ .off-canvas-menu,
+    input.trigger:checked ~ .off-canvas-menu ul {
+        left: 0%;
+    }
+}
+
 /* I want to hide the menu when link is clicked */
 
 #nav {
-    input.trigger:checked ~ ul,
-    input.trigger:checked ~ ul li ul {
+    input.trigger:checked ~ .off-canvas-menu ul,
+    input.trigger:checked ~ .off-canvas-menu ul li ul {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -656,10 +692,13 @@ footer a i:hover {
         background-color: #000000;
     }
     /* Hide mobile menu */
-    #nav label {
+    #nav ul li label,
+    #nav .off-canvas-menu {
         display: none;
     }
-    #nav ul label {
+    #nav label,
+    #nav .off-canvas-menu label,
+    #nav submenu-products2{
         display: none;
     }
     /* Desktop logo */
